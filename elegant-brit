@@ -1,0 +1,58 @@
+background yes #ejecutar Conky como proceso sin necesidad de intervención del usuario #
+use_xft yes #usar las características de suavizado de las fuentes #
+xftfont DejaVu Sans Mono:pixelsize=11 # fuente por defecto
+xftalpha 0.8 # transparencia de la fuente - 1.0 es el 100% de opacidad #
+update_interval 1.0 # intervalo de actualización en segundos #
+total_run_times 0 # cantidad de veces que se ejecutará Conky #
+own_window yes # ejecutar Conky en una ventana propia #
+own_window_transparent yes # habilitar la transparencia de la ventana de Conky #
+own_window_type override # ejecutar por encima del wallpaper
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager # la ventana de conky se ejecutará sin decoraciones, debajo del resto de las ventanas, fija al escritorio, esquivar la barra de tareas y el paginador. #
+double_buffer yes # esta configuración evita que la ventana de conky parpadee#
+draw_shades no # no proyectar sombra #
+draw_outline no # no dibujar un subrayado #
+draw_borders no # no dibujar bordes #
+draw_graph_borders no # los graficos no tendran bordes #
+stippled_borders 0 # bordes de puntos #
+border_margin 4 # margen de los bordes #
+border_width 0 # ancho de los bordes #
+default_color white # color por defecto de las fuentes #
+default_shade_color black # color de la sombra por defecto #
+default_outline_color black # color del subrayado por defecto #
+alignment bottom_right # alineación abajo y a la derecha #
+gap_x 12 # espacio desde el eje x en pixeles #
+gap_y 12 # espacio desde el eje y en pixeles #
+no_buffers yes # logra que Conky muestre solamente la RAM en uso y no le sume la Caché #
+cpu_avg_samples 2 # cantidad de muestras que tomará del CPU #
+net_avg_samples 2 # cantidad de muestras que tomará de las conexiones de red #
+override_utf8_locale no
+use_spacer yes # reproduce exactamente los espacios que dejemos debajo de TEXT al tipear. #
+TEXT
+${color #7f7f7f}
+${alignr}$font ${color #ffffff}$sysname-$kernel
+${alignr}$font ${color #e04613}| ${color #7f7f7f}
+${alignr}$font ${color #ffffff}time ${color #e04613}--| ${color #7f7f7f}
+${alignr}$font ${color #6c9eab}${time %a %d. %b %k:%M} now ${color #e04613}--| | ${color #4d4d4d}
+${alignr}$font ${color #ffffff}$uptime uptime ${color #e04613}--' | ${color #4d4d4d}
+${alignr}$font ${color #e04613}| ${color #4d4d4d}
+${alignr}$font ${color #ffffff}system ${color #e04613}--| ${color #7f7f7f}
+${alignr}$font cpu ${color #e04613}--| | ${color #7f7f7f}
+${alignr}$font $cpu% ${color #262729}// ${color #7f7f7f}used ${color #e04613}--| | | ${color #7f7f7f}
+${alignr}$font $loadavg${color #262729} // ${color #7f7f7f}load ${color #e04613}--| | | ${color #7f7f7f}
+${alignr}$font ${top name 1}${color #262729}//${color #7f7f7f}${top cpu 1} ${color #e04613}--| | | ${color #7f7f7f}
+${alignr}$font ${top name 2}${color #262729}//${color #7f7f7f}${top cpu 2} ${color #e04613}--| | | ${color #7f7f7f}
+${alignr}$font processes ${color #e04613}--| | ${color #7f7f7f}
+${alignr}$font $processes${color #262729}//${color #7f7f7f} total ${color #e04613}--| | | ${color #7f7f7f}
+${alignr}$font $running_processes${color #262729}//${color #7f7f7f} running ${color #e04613}--' | | ${color #7f7f7f}
+${alignr}$font ${color #ffffff}music ${color #e04613}--' | ${color #4d4d4d}
+${alignr}$font ${color #6c9eab}$mpd_title ${color #e04613}--| | ${color #4d4d4d}
+${alignr}$font ${color #6c9eab}$mpd_artist ${color #e04613}--' | ${color #4d4d4d}
+${alignr}$font ${color #e04613}| ${color #4d4d4d}
+${alignr}$font ${color #7f7f7f}resources ${color #e04613}--| ${color #7f7f7f}
+${alignr}$font $diskio_read ${color #262729}// ${color #7f7f7f}read ${color #e04613}--| | ${color #7f7f7f}
+${alignr}$font $diskio_write ${color #262729}// ${color #7f7f7f}write ${color #e04613}--| | ${color #7f7f7f}
+${alignr}$font ${color #ffffff}ram ${color #e04613}--| | ${color #7f7f7f}
+${alignr}$font $memperc% ${color #262729}// ${color #7f7f7f}used ${color #e04613}--| | | ${color #7f7f7f}
+${alignr}$font $mem/$memmax ${color #e04613}--' | | | ${color #7f7f7f}
+${alignr}$font ${top_mem name 1}${color #262729}//${color #7f7f7f}${top mem 1} ${color #e04613}--| | | ${color #7f7f7f}
+${alignr}$font ${top_mem name 2}${color #262729}//${color #7f7f7f}${top mem 2} ${color #e04613}--| | | ${color #7f7f7f}
